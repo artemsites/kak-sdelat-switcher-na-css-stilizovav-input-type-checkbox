@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const switcherAll = document.querySelectorAll(".switcher");
     switcherAll.forEach(function (switcher) {
-      switcher.addEventListener("click", function (e) {
+      switcher.addEventListener("click", function() {
+
         if (switcher.classList.contains("_on")) {
           switcher.classList.remove("_on");
           switcher.classList.add("_off");
@@ -16,12 +17,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const checkbox = switcher.querySelector(".switcher__checkbox");
         checkbox.value=checkbox.checked
 
-        // Сброс анимации сплющивания
+        // Сброс анимации индикатора
         const indicator = switcher.querySelector(".switcher__indicator");
         indicator.style.animationName = "none";
         requestAnimationFrame(function () {
           indicator.style.animationName = "";
         });
+
       });
     });
 
